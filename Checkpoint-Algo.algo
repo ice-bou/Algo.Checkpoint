@@ -1,0 +1,25 @@
+ALGORITHM Counter
+VAR
+    c : CHAR;
+    cc,cw,cv : INTEGER := 0;
+BEGIN
+    REPEAT
+        Write ("ecrire votre charactere")
+        Read (c);
+
+        cc := cc + 1;
+
+        IF (c = ' ') THEN
+            cw := cw + 1;
+        END_IF
+
+        IF (c = 'A' OR c = 'E' OR c = 'I' OR c = 'O' OR c = 'U' OR c = 'Y' OR c = 'a' OR c = 'e' OR c = 'i' OR c = 'o' OR c = 'u' OR c = 'y') THE<<N
+            cv := cv + 1;
+        END_IF
+
+    UNTIL (c = '.')
+    
+    Write("Le nombre de char", cc)
+    Write("Le nombre de char", cw)
+    Write("Le nombre de char", cv)
+END
