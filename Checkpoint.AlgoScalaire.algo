@@ -1,0 +1,36 @@
+FUNCTION ProduitScalaire(r,t : ARRAY_OF INTEGER[]) : BOOLEAN
+VAR
+    sum : INTEGER 0;
+BEGIN
+    FOR i FROM 1 TO r.length STEP 1  DO
+        sum := sum + (r{i*t[i]})
+    END_FOR
+
+
+    IF (sum = 0) THEN
+        Return TRUE
+    ELSE
+        Return FALSE 
+    END_IF
+    
+END
+
+ALGORITHM ProduitScalaire
+VAR
+    v1 : ARRAY_OF INTEGER [] :=[2,4];
+    v2 : ARRAY_OF INTEGER [] :=[4,6];
+    result : BOOLEAN; 
+BEGIN
+    IF (v2.length<2 OR v2.length>3 OR v1.length <> v2.length ) THEN
+        Write("on ne peut pas calculer le produit scalaire")
+    ELSE
+        result := ProduitScalaire(v1,v2);
+
+        IF (result = TRUE) THEN
+            Write ("Ortho")
+
+        ELSE
+            Write("No Ortho")
+        END_IF
+    END_IF
+END
